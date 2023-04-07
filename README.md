@@ -135,3 +135,13 @@ sure you implemented both endpoints properly.
 ## Congratulations!
 
 You are now able to use **Sequelize** models to insert data into a database.
+
+## Submission
+
+Submit your work. Make sure to delete the `node_modules` folders in
+__BOTH root and server directories__!!
+
+1. Delete the `node_modules` folder in the root directory
+2. Delete the `node_modules` folder in the __server__ directory
+3. Zip up the project folder
+4. Submit the zip file
