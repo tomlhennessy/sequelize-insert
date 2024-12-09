@@ -1,19 +1,23 @@
+
+
 const build = async () => {
-  const { Puppy } = require('./db/models');
+//   const { Puppy } = require('./db/models');
   try {
-    /* ====================== STEP 1 ====================== */
-    // Using `build` and `save`, insert a record into the Puppies table with the
-    // following attributes:
-    // name: Trudy
-    // ageYrs: 2
-    // weightLbs: 38
-    // breed: Brittany Spaniel
-    // microchipped: false
-    // Your code here
+//     // build a new puppy instance
+//     const newPuppy = Puppy.build({
+//       name: "Trudy",
+//       ageYrs: 2,
+//       weightLbs: 38,
+//       breed: "Brittany Spaniel",
+//       microchipped: false,
+//     })
 
+//     // save instance to database
+//     await newPuppy.save();
 
+//     console.log('Trudy has been added to the database.');
   } catch (err) {
-    throw err;
+//     console.error("Error adding Trudy:", err);
   }
 
 };
@@ -21,19 +25,18 @@ const build = async () => {
 const create = async () => {
   const { Puppy } = require('./db/models');
   try {
-    /* ====================== STEP 2 ====================== */
-    // Using `create`, insert a record into the Puppies table with the following
-    // attributes:
-    // name: Beans
-    // ageYrs: 1.6
-    // weightLbs: 42
-    // breed: Bulldog
-    // microchipped: true
-    // Your code here
+    // create new puppy instance
+    const newPuppy = await Puppy.create({
+      name: "Beans",
+      ageYrs: 1.6,
+      weightLbs: 42,
+      breed: "Bulldog",
+      microchipped: true,
+    })
 
-
+    console.log("Beans has been added to the database.");
   } catch (err) {
-    throw err;
+    console.error("Error adding Beans:", err);
   }
 };
 
