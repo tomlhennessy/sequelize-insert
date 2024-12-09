@@ -24,7 +24,18 @@ app.get('/puppies', async (req, res, next) => {
 // Use these values to BUILD a new Puppy in the database.
 // Respond to the request by sending a success message
 app.post('/puppies/build', async (req, res, next) => {
-    // Your code here
+    try {
+        // build and save a new puppy instance
+        const newPuppy = Puppy.build(req.body);
+        await newPuppy.save();
+
+        res.json({
+            message: "Puppy created successfully using build and save!",
+            data: newPuppy,
+        });
+    } catch (err) {
+        res.status(500).json({ error: "Error creating puppy using build." });
+    }
 })
 
 // STEP 2
@@ -33,7 +44,17 @@ app.post('/puppies/build', async (req, res, next) => {
 // Use these values to CREATE a new Puppy in the database.
 // Respond to the request by sending a success message
 app.post('/puppies/create', async (req, res, next) => {
-    // Your code here
+    try {
+        // create a new puppy instance directly
+        const newPuppy = await Puppy.create(req.body);
+
+        res.json({
+            message: "Puppy created successfully using create!",
+            data: newPuppy,
+        })
+    } catch (err) {
+        res.status(500).json({ error: "Error creating puppy using create." });
+    }
 })
 
 
